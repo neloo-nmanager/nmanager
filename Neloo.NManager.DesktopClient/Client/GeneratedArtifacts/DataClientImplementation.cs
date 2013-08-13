@@ -10,6 +10,253 @@
 namespace LightSwitchApplication.Implementation
 {
     
+    #region Part
+    [global::System.Runtime.Serialization.DataContract(Namespace = "http://schemas.datacontract.org/2004/07/ApplicationData.Implementation")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    public partial class Part :
+        global::LightSwitchApplication.Part.DetailsClass.IImplementation
+    {
+        partial void OnPart_ProjectChanged()
+        {
+            this.___OnPropertyChanged("Part_Project");
+            this.___OnPropertyChanged("Project");
+        }
+        
+        partial void OnIdChanged()
+        {
+            this.___OnPropertyChanged("Id");
+        }
+        
+        partial void OnRowVersionChanged()
+        {
+            this.___OnPropertyChanged("RowVersion");
+        }
+        
+        partial void OnNameChanged()
+        {
+            this.___OnPropertyChanged("Name");
+        }
+        
+        partial void OnPriceChanged()
+        {
+            this.___OnPropertyChanged("Price");
+        }
+        
+        partial void OnUrlChanged()
+        {
+            this.___OnPropertyChanged("Url");
+        }
+        
+        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.Part.DetailsClass.IImplementation.Project
+        {
+            get
+            {
+                return this.Project;
+            }
+            set
+            {
+                this.Project = (global::LightSwitchApplication.Implementation.Project)value;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.Project> __Project
+        {
+            get
+            {
+                if (this.___Project == null)
+                {
+                    this.___Project = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.Project>(
+                        this,
+                        "Project",
+                        new string[] { "Part_Project" },
+                        e => global::System.Object.Equals(e.Id, this.Part_Project),
+                        () => this._Project,
+                        e => this._Project = e);
+                }
+                return this.___Project;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.Project> ___Project;
+        
+    }
+    #endregion
+    
+    #region Project
+    [global::System.Runtime.Serialization.DataContract(Namespace = "http://schemas.datacontract.org/2004/07/ApplicationData.Implementation")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    public partial class Project :
+        global::LightSwitchApplication.Project.DetailsClass.IImplementation
+    {
+        partial void OnIdChanged()
+        {
+            this.___OnPropertyChanged("Id");
+        }
+        
+        partial void OnRowVersionChanged()
+        {
+            this.___OnPropertyChanged("RowVersion");
+        }
+        
+        partial void OnNameChanged()
+        {
+            this.___OnPropertyChanged("Name");
+        }
+        
+        partial void OnCreatedChanged()
+        {
+            this.___OnPropertyChanged("Created");
+        }
+        
+        global::System.Collections.IEnumerable global::LightSwitchApplication.Project.DetailsClass.IImplementation.Parts
+        {
+            get
+            {
+                return this.Parts;
+            }
+        }
+        
+        internal global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.Part> __Parts
+        {
+            get
+            {
+                if (this.___Parts == null)
+                {
+                    this.___Parts = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.Part>(
+                        this,
+                        "Parts",
+                        () => this._Parts,
+                        e => global::System.Object.Equals(e.Part_Project, this.Id));
+                }
+                return this.___Parts;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.Part> ___Parts;
+        
+        global::System.Collections.IEnumerable global::LightSwitchApplication.Project.DetailsClass.IImplementation.Attachments
+        {
+            get
+            {
+                return this.Attachments;
+            }
+        }
+        
+        internal global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.Attachment> __Attachments
+        {
+            get
+            {
+                if (this.___Attachments == null)
+                {
+                    this.___Attachments = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.Attachment>(
+                        this,
+                        "Attachments",
+                        () => this._Attachments,
+                        e => global::System.Object.Equals(e.Attachment_Project, this.Id));
+                }
+                return this.___Attachments;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.Attachment> ___Attachments;
+        
+    }
+    #endregion
+    
+    #region Attachment
+    [global::System.Runtime.Serialization.DataContract(Namespace = "http://schemas.datacontract.org/2004/07/ApplicationData.Implementation")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    public partial class Attachment :
+        global::LightSwitchApplication.Attachment.DetailsClass.IImplementation
+    {
+        partial void OnAttachment_ProjectChanged()
+        {
+            this.___OnPropertyChanged("Attachment_Project");
+            this.___OnPropertyChanged("Project");
+        }
+        
+        partial void OnIdChanged()
+        {
+            this.___OnPropertyChanged("Id");
+        }
+        
+        partial void OnRowVersionChanged()
+        {
+            this.___OnPropertyChanged("RowVersion");
+        }
+        
+        partial void OnContentChanged()
+        {
+            this.___OnPropertyChanged("Content");
+        }
+        
+        partial void OnNameChanged()
+        {
+            this.___OnPropertyChanged("Name");
+        }
+        
+        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.Attachment.DetailsClass.IImplementation.Project
+        {
+            get
+            {
+                return this.Project;
+            }
+            set
+            {
+                this.Project = (global::LightSwitchApplication.Implementation.Project)value;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.Project> __Project
+        {
+            get
+            {
+                if (this.___Project == null)
+                {
+                    this.___Project = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.Project>(
+                        this,
+                        "Project",
+                        new string[] { "Attachment_Project" },
+                        e => global::System.Object.Equals(e.Id, this.Attachment_Project),
+                        () => this._Project,
+                        e => this._Project = e);
+                }
+                return this.___Project;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.Project> ___Project;
+        
+    }
+    #endregion
+    
+    #region ApplicationDataObjectContext
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    public partial class ApplicationDataObjectContext
+    {
+        protected override global::Microsoft.LightSwitch.Internal.IEntityImplementation CreateEntityImplementation<T>()
+        {
+            if (typeof(T) == typeof(global::LightSwitchApplication.Part))
+            {
+                return new global::LightSwitchApplication.Implementation.Part();
+            }
+            if (typeof(T) == typeof(global::LightSwitchApplication.Project))
+            {
+                return new global::LightSwitchApplication.Implementation.Project();
+            }
+            if (typeof(T) == typeof(global::LightSwitchApplication.Attachment))
+            {
+                return new global::LightSwitchApplication.Implementation.Attachment();
+            }
+            return null;
+        }
+    }
+    #endregion
+    
     #region DataServiceImplementationFactory
     [global::System.ComponentModel.Composition.PartCreationPolicy(global::System.ComponentModel.Composition.CreationPolicy.Shared)]
     [global::System.ComponentModel.Composition.Export(typeof(global::Microsoft.LightSwitch.Internal.IDataServiceFactory))]
@@ -21,11 +268,19 @@ namespace LightSwitchApplication.Implementation
     
         protected override global::Microsoft.LightSwitch.IDataService CreateDataService(global::System.Type dataServiceType)
         {
+            if (dataServiceType == typeof(global::LightSwitchApplication.ApplicationData))
+            {
+                return new global::LightSwitchApplication.ApplicationData();
+            }
             return base.CreateDataService(dataServiceType);
         }
     
         protected override global::Microsoft.LightSwitch.Internal.IDataServiceImplementation CreateDataServiceImplementation<TDataService>(TDataService dataService)
         {
+            if (typeof(TDataService) == typeof(global::LightSwitchApplication.ApplicationData))
+            {
+                return new global::LightSwitchApplication.Implementation.ApplicationDataObjectContext(global::Microsoft.LightSwitch.ClientGenerated.Implementation.DataServiceContext.CreateServiceUri("../ApplicationData.svc"));
+            }
             return base.CreateDataServiceImplementation(dataService);
         }
     }
@@ -40,6 +295,18 @@ namespace LightSwitchApplication.Implementation
     {
         global::System.Type global::Microsoft.LightSwitch.Internal.ITypeMappingProvider.GetImplementationType(global::System.Type definitionType)
         {
+            if (typeof(global::LightSwitchApplication.Part) == definitionType)
+            {
+                return typeof(global::LightSwitchApplication.Implementation.Part);
+            }
+            if (typeof(global::LightSwitchApplication.Project) == definitionType)
+            {
+                return typeof(global::LightSwitchApplication.Implementation.Project);
+            }
+            if (typeof(global::LightSwitchApplication.Attachment) == definitionType)
+            {
+                return typeof(global::LightSwitchApplication.Implementation.Attachment);
+            }
             return null;
         }
     }

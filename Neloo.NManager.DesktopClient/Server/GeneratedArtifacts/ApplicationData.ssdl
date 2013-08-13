@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="ApplicationDataStore" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="ApplicationDataStore">
+    <EntitySet Name="Parts" EntityType="ApplicationDataStore.Part" store:Type="Tables" Schema="dbo" Table="Parts" />
+    <EntitySet Name="Projects" EntityType="ApplicationDataStore.Project" store:Type="Tables" Schema="dbo" Table="Projects" />
+    <EntitySet Name="Attachments" EntityType="ApplicationDataStore.Attachment" store:Type="Tables" Schema="dbo" Table="Attachments" />
+    <AssociationSet Name="Part_Project" Association="ApplicationDataStore.Part_Project">
+      <End Role="Project" EntitySet="Projects" />
+      <End Role="Part" EntitySet="Parts" />
+    </AssociationSet>
+    <AssociationSet Name="Attachment_Project" Association="ApplicationDataStore.Attachment_Project">
+      <End Role="Project" EntitySet="Projects" />
+      <End Role="Attachment" EntitySet="Attachments" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Part">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Price" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Url" Type="nvarchar" MaxLength="255" />
+    <Property Name="Part_Project" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Project">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Attachment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="Content" Type="varbinary(max)" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Attachment_Project" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="Part_Project">
+    <End Role="Project" Type="ApplicationDataStore.Project" Multiplicity="1" />
+    <End Role="Part" Type="ApplicationDataStore.Part" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Project">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Part">
+        <PropertyRef Name="Part_Project" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Attachment_Project">
+    <End Role="Project" Type="ApplicationDataStore.Project" Multiplicity="1" />
+    <End Role="Attachment" Type="ApplicationDataStore.Attachment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Project">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Attachment">
+        <PropertyRef Name="Attachment_Project" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" Namespace="LightSwitchApplication" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityType Name="Part">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="255" />
+    <Property Name="Price" Type="Edm.Decimal" Precision="18" Scale="2" />
+    <Property Name="Url" Type="Edm.String" MaxLength="255" />
+    <Property Name="Part_Project" Type="Edm.Int32" Nullable="false" />
+    <NavigationProperty Name="Project" Relationship="LightSwitchApplication.Part_Project" ToRole="Project" FromRole="Part" />
+  </EntityType>
+  <EntityType Name="Project">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="255" />
+    <Property Name="Created" Type="Edm.DateTime" Nullable="false" />
+    <NavigationProperty Name="Parts" Relationship="LightSwitchApplication.Part_Project" ToRole="Part" FromRole="Project" />
+    <NavigationProperty Name="Attachments" Relationship="LightSwitchApplication.Attachment_Project" ToRole="Attachment" FromRole="Project" />
+  </EntityType>
+  <EntityType Name="Attachment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="Content" Type="Edm.Binary" Nullable="false" MaxLength="Max" />
+    <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="255" />
+    <Property Name="Attachment_Project" Type="Edm.Int32" Nullable="false" />
+    <NavigationProperty Name="Project" Relationship="LightSwitchApplication.Attachment_Project" ToRole="Project" FromRole="Attachment" />
+  </EntityType>
+  <Association Name="Part_Project">
+    <End Role="Project" Type="LightSwitchApplication.Project" Multiplicity="1" />
+    <End Role="Part" Type="LightSwitchApplication.Part" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Project">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Part">
+        <PropertyRef Name="Part_Project" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Attachment_Project">
+    <End Role="Project" Type="LightSwitchApplication.Project" Multiplicity="1" />
+    <End Role="Attachment" Type="LightSwitchApplication.Attachment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Project">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Attachment">
+        <PropertyRef Name="Attachment_Project" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ApplicationDataObjectContext" m:IsDefaultEntityContainer="true">
+    <EntitySet Name="Parts" EntityType="LightSwitchApplication.Part" />
+    <EntitySet Name="Projects" EntityType="LightSwitchApplication.Project" />
+    <EntitySet Name="Attachments" EntityType="LightSwitchApplication.Attachment" />
+    <AssociationSet Name="Part_Project" Association="LightSwitchApplication.Part_Project">
+      <End Role="Project" EntitySet="Projects" />
+      <End Role="Part" EntitySet="Parts" />
+    </AssociationSet>
+    <AssociationSet Name="Attachment_Project" Association="LightSwitchApplication.Attachment_Project">
+      <End Role="Project" EntitySet="Projects" />
+      <End Role="Attachment" EntitySet="Attachments" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

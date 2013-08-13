@@ -178,11 +178,11 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+    <Content Include="Web\Neloo.NManager.DesktopClient.Client.xap" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DataLogic\" />
     <Folder Include="DataSources\" />
-    <Folder Include="Web\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <ModelDocumentManifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Documents>
-    <Document FullPath="E:\@@ DEV @@\Neloo.NManager\Neloo.NManager.DesktopClient\Client\Properties\Client.lsml" Checksum="A0636951BB5B2F9FD0B9DD9931AB73A7823F71B1F0AB80A9C8BA6378A466F54C" />
-    <Document FullPath="E:\@@ DEV @@\Neloo.NManager\Neloo.NManager.DesktopClient\Common\Properties\Common.lsml" Checksum="CAFF776B34B3E3619D5F40AFA840716CCCA8835484AF249D9E4C86ADE07706C7" />
+    <Document FullPath="E:\@@ DEV @@\namanager\Neloo.NManager.DesktopClient\Client\Properties\Client.lsml" Checksum="FFCCC0A12B00141C6CDC431A6B0E6245F7A5F6161C8E4600492EFB78917CB506" />
+    <Document FullPath="E:\@@ DEV @@\namanager\Neloo.NManager.DesktopClient\Common\Properties\Common.lsml" Checksum="5A197C27D19006E1A4815C39850E93B94A6050E0F0269B371083E64F319F73C6" />
   </Documents>
 </ModelDocumentManifest>

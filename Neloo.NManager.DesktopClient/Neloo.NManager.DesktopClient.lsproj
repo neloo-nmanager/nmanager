@@ -21,7 +21,7 @@
     <ApplicationClientType>Desktop</ApplicationClientType>
     <ApplicationServerType>LocalHost</ApplicationServerType>
     <AuthenticationType>None</AuthenticationType>
-    <ApplicationName>Neloo.NManager.DesktopClient</ApplicationName>
+    <ApplicationName>NManager</ApplicationName>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
     <ServiceDefinitionFile>ServiceDefinition.csdef</ServiceDefinitionFile>
     <ServiceConfigurationFile>ServiceConfiguration.cscfg</ServiceConfigurationFile>
